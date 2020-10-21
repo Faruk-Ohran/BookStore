@@ -1,0 +1,8 @@
+C:\Users\Ohran\Desktop\Projekti\Angular\Book_store\BookStore.Dal\bin\Debug\netcoreapp3.1\BookStore.Dal.deps.json
+C:\Users\Ohran\Desktop\Projekti\Angular\Book_store\BookStore.Dal\bin\Debug\netcoreapp3.1\BookStore.Dal.dll
+C:\Users\Ohran\Desktop\Projekti\Angular\Book_store\BookStore.Dal\bin\Debug\netcoreapp3.1\BookStore.Dal.pdb
+C:\Users\Ohran\Desktop\Projekti\Angular\Book_store\BookStore.Dal\obj\Debug\netcoreapp3.1\BookStore.Dal.csprojAssemblyReference.cache
+C:\Users\Ohran\Desktop\Projekti\Angular\Book_store\BookStore.Dal\obj\Debug\netcoreapp3.1\BookStore.Dal.AssemblyInfoInputs.cache
+C:\Users\Ohran\Desktop\Projekti\Angular\Book_store\BookStore.Dal\obj\Debug\netcoreapp3.1\BookStore.Dal.AssemblyInfo.cs
+C:\Users\Ohran\Desktop\Projekti\Angular\Book_store\BookStore.Dal\obj\Debug\netcoreapp3.1\BookStore.Dal.dll
+C:\Users\Ohran\Desktop\Projekti\Angular\Book_store\BookStore.Dal\obj\Debug\netcoreapp3.1\BookStore.Dal.pdb
