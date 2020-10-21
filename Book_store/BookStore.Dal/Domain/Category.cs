@@ -9,6 +9,6 @@ namespace BookStore.Domain
     {
         public int CategoryID { get; set; }
         public string CategoryName { get; set; }
-        public List<BookCategory> BookCategory { get; set; }
+        public List<BookCategory> BookCategories { get; set; }
     }
 }

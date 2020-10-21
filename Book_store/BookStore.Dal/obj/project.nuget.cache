@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mVC7xbK+dCYc/A0qaqPhJWuUxRuSiXrRdVAihypsyyJRjNMiLmm5aBi+2PDIFO0jXpUlOxhW4n/k+eZv7CfWFQ==",
+  "dgSpecHash": "yR93cHwLPdoQ2oXkTDmS8xzJIftAVPSwNI5mVGmSyQcYC61ArXA1eg7VA856JqUHVQ9ScNAykD2leQPXfzVVAA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ohran\\Desktop\\Projekti\\Angular\\Book_store\\BookStore.Dal\\BookStore.Dal.csproj",
+  "projectFilePath": "C:\\Users\\Ohran\\Documents\\GitHub\\BookStore\\Book_store\\BookStore.Dal\\BookStore.Dal.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ohran\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Ohran\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",

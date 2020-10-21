@@ -642,11 +642,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ohran\\Desktop\\Projekti\\Angular\\Book_store\\BookStore.Dal\\BookStore.Dal.csproj",
+      "projectUniqueName": "C:\\Users\\Ohran\\Documents\\GitHub\\BookStore\\Book_store\\BookStore.Dal\\BookStore.Dal.csproj",
       "projectName": "BookStore.Dal",
-      "projectPath": "C:\\Users\\Ohran\\Desktop\\Projekti\\Angular\\Book_store\\BookStore.Dal\\BookStore.Dal.csproj",
+      "projectPath": "C:\\Users\\Ohran\\Documents\\GitHub\\BookStore\\Book_store\\BookStore.Dal\\BookStore.Dal.csproj",
       "packagesPath": "C:\\Users\\Ohran\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ohran\\Desktop\\Projekti\\Angular\\Book_store\\BookStore.Dal\\obj\\",
+      "outputPath": "C:\\Users\\Ohran\\Documents\\GitHub\\BookStore\\Book_store\\BookStore.Dal\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Ohran\\AppData\\Roaming\\NuGet\\NuGet.Config",

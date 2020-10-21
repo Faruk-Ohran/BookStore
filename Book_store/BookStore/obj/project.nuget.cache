@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dH2SJMpTdBHAFrNRkKyUUB6uWXiocav4tsRNV5SnjAZOGYSmvrVEXOyX/4Y9GM1hI7w5l7IDbqqecTOPkMpvJQ==",
+  "dgSpecHash": "K+nmqZz6vYFLXtM/o3+oxXZWK4R5TCJHgCN/v8ZKqNImsgEa8+kftSfa9lk9BbLVUF6XCWMrIm0uMuQpvNGeNw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ohran\\Desktop\\Projekti\\Angular\\Book_store\\BookStore\\BookStore.csproj",
+  "projectFilePath": "C:\\Users\\Ohran\\Documents\\GitHub\\BookStore\\Book_store\\BookStore\\BookStore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ohran\\.nuget\\packages\\automapper\\10.1.0\\automapper.10.1.0.nupkg.sha512",
     "C:\\Users\\Ohran\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.0\\automapper.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",

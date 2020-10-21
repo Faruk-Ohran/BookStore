@@ -1627,11 +1627,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ohran\\Desktop\\Projekti\\Angular\\Book_store\\BookStore\\BookStore.csproj",
+      "projectUniqueName": "C:\\Users\\Ohran\\Documents\\GitHub\\BookStore\\Book_store\\BookStore\\BookStore.csproj",
       "projectName": "BookStore",
-      "projectPath": "C:\\Users\\Ohran\\Desktop\\Projekti\\Angular\\Book_store\\BookStore\\BookStore.csproj",
+      "projectPath": "C:\\Users\\Ohran\\Documents\\GitHub\\BookStore\\Book_store\\BookStore\\BookStore.csproj",
       "packagesPath": "C:\\Users\\Ohran\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ohran\\Desktop\\Projekti\\Angular\\Book_store\\BookStore\\obj\\",
+      "outputPath": "C:\\Users\\Ohran\\Documents\\GitHub\\BookStore\\Book_store\\BookStore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Ohran\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1647,8 +1647,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Ohran\\Desktop\\Projekti\\Angular\\Book_store\\BookStore.Dal\\BookStore.Dal.csproj": {
-              "projectPath": "C:\\Users\\Ohran\\Desktop\\Projekti\\Angular\\Book_store\\BookStore.Dal\\BookStore.Dal.csproj"
+            "C:\\Users\\Ohran\\Documents\\GitHub\\BookStore\\Book_store\\BookStore.Dal\\BookStore.Dal.csproj": {
+              "projectPath": "C:\\Users\\Ohran\\Documents\\GitHub\\BookStore\\Book_store\\BookStore.Dal\\BookStore.Dal.csproj"
             }
           }
         }
