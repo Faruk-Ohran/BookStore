@@ -1,12 +1,17 @@
-﻿using System;
+﻿using BookStore.Dal.Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace BookStore.Domain
 {
-    public class Book
+    public class Book : BaseEntity
     {
+        public Book(string createdBy):base(createdBy)
+        {
+
+        }
         public int Id { get; set; }
         public string Name { get; set; }
         public float Price { get; set; }

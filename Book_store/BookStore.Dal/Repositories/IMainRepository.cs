@@ -1,13 +1,14 @@
-﻿using System;
+﻿using BookStore.Dal.Domain;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace BookStore.Dal.Repositories
 {
-    public interface IMainRepository
+    public interface IMainRepository<TEntity> where TEntity : BaseEntity
     {
-        Object Add(Object obj);
-        Object Remove(int id);
-        Object Update(int id);
+        TEntity Add(TEntity obj);
+        TEntity Remove(int id);
+        TEntity Update(int id);
     }
 }

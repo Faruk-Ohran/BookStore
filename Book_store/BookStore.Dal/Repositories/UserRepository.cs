@@ -1,4 +1,5 @@
 ﻿using BookStore.Domain;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,18 +8,17 @@ namespace BookStore.Dal.Repositories
 {
     class UserRepository : IUserRepository
     {
-        public object Add(object obj)
+        public User Add(User user)
         {
-            User user = obj as User;
             return user;
         }
 
-        public object Remove(int id)
+        public User Remove(int id)
         {
             throw new NotImplementedException();
         }
 
-        public object Update(int id)
+        public User Update(int id)
         {
             throw new NotImplementedException();
         }

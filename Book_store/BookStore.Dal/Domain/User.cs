@@ -1,12 +1,17 @@
-﻿using System;
+﻿using BookStore.Dal.Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace BookStore.Domain
 {
-    public class User
+    public class User:BaseEntity
     {
+        public User(string createdBy):base(createdBy)
+        {
+
+        }
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
