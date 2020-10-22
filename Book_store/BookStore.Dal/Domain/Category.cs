@@ -8,9 +8,8 @@ namespace BookStore.Domain
 {
     public class Category:BaseEntity
     {
-     
-        public int CategoryID { get; set; }
         public string CategoryName { get; set; }
-        public List<BookCategory> BookCategories { get; set; }
+        public IList<BookCategory> Categories { get; set; }
+
     }
 }

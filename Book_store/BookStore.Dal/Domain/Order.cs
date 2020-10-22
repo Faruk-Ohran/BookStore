@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace BookStore.Domain
 {
-    public class Order:BaseEntity
+    public class Order
     {
-       
-        public int UserID { get; set; }
+        public int UserId { get; set; }
         public User User { get; set; }
-        public int BookID { get; set; }
+        public int BookId { get; set; }
         public Book Book { get; set; }
         public DateTime DateTime { get; set; }
         public float Total { get; set; }

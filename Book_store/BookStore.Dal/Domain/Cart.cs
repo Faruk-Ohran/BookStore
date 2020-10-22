@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace BookStore.Domain
 {
-    public class Cart:BaseEntity
+    public class Cart
     {
         public int UserId { get; set; }
         public User User { get; set; }
         public int BookId { get; set; }
         public Book Book { get; set; }
+        public int Quantity { get; set; }
     }
 }

@@ -24,10 +24,6 @@ namespace BookStore.Dal.Configuration
                 .Property(p => p.Password)
                 .IsRequired();
 
-            builder
-                .HasMany(p => p.Carts)
-                .WithOne(p => p.User)
-                .HasForeignKey(p => p.UserId);
         }
     }
 }

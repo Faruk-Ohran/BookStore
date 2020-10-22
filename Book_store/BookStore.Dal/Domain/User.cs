@@ -15,7 +15,9 @@ namespace BookStore.Domain
         public string Adress { get; set; }
         public string Password { get; set; }
         public bool IsAdmin { get; set; }
-        public ICollection<Book> Carts { get; set; }
+        public IList<Cart> Carts { get; set; }
+        public IList<WishList> wishLists { get; set; }
+        public IList<Order> Orders { get; set; }
 
     }
 }
