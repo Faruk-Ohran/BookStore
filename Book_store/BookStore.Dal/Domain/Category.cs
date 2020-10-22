@@ -8,10 +8,7 @@ namespace BookStore.Domain
 {
     public class Category:BaseEntity
     {
-        public Category(string createdBy):base(createdBy)
-        {
-
-        }
+     
         public int CategoryID { get; set; }
         public string CategoryName { get; set; }
         public List<BookCategory> BookCategories { get; set; }

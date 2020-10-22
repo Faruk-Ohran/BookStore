@@ -6,3 +6,15 @@ C:\Users\Ohran\Desktop\Projekti\Angular\Book_store\BookStore.Dal\obj\Debug\netco
 C:\Users\Ohran\Desktop\Projekti\Angular\Book_store\BookStore.Dal\obj\Debug\netcoreapp3.1\BookStore.Dal.AssemblyInfo.cs
 C:\Users\Ohran\Desktop\Projekti\Angular\Book_store\BookStore.Dal\obj\Debug\netcoreapp3.1\BookStore.Dal.dll
 C:\Users\Ohran\Desktop\Projekti\Angular\Book_store\BookStore.Dal\obj\Debug\netcoreapp3.1\BookStore.Dal.pdb
+C:\Users\Ohran\Documents\GitHub\BookStore\Book_store\BookStore.Dal\bin\Debug\netcoreapp3.1\BookStore.Dal.deps.json
+C:\Users\Ohran\Documents\GitHub\BookStore\Book_store\BookStore.Dal\bin\Debug\netcoreapp3.1\BookStore.Dal.dll
+C:\Users\Ohran\Documents\GitHub\BookStore\Book_store\BookStore.Dal\bin\Debug\netcoreapp3.1\BookStore.Dal.pdb
+C:\Users\Ohran\Documents\GitHub\BookStore\Book_store\BookStore.Dal\obj\Debug\netcoreapp3.1\BookStore.Dal.csprojAssemblyReference.cache
+C:\Users\Ohran\Documents\GitHub\BookStore\Book_store\BookStore.Dal\obj\Debug\netcoreapp3.1\BookStore.Dal.AssemblyInfoInputs.cache
+C:\Users\Ohran\Documents\GitHub\BookStore\Book_store\BookStore.Dal\obj\Debug\netcoreapp3.1\BookStore.Dal.AssemblyInfo.cs
+C:\Users\Ohran\Documents\GitHub\BookStore\Book_store\BookStore.Dal\obj\Debug\netcoreapp3.1\BookStore.Dal.dll
+C:\Users\Ohran\Documents\GitHub\BookStore\Book_store\BookStore.Dal\obj\Debug\netcoreapp3.1\BookStore.Dal.pdb
+C:\Users\Ohran\Documents\GitHub\BookStore\Book_store\BookStore.Dal\bin\Debug\netcoreapp3.1\BookStore.Dal.runtimeconfig.json
+C:\Users\Ohran\Documents\GitHub\BookStore\Book_store\BookStore.Dal\bin\Debug\netcoreapp3.1\BookStore.Dal.runtimeconfig.dev.json
+C:\Users\Ohran\Documents\GitHub\BookStore\Book_store\BookStore.Dal\obj\Debug\netcoreapp3.1\BookStore.Dal.genruntimeconfig.cache
+C:\Users\Ohran\Documents\GitHub\BookStore\Book_store\BookStore.Dal\obj\Debug\netcoreapp3.1\BookStore.Dal.csproj.CoreCompileInputs.cache

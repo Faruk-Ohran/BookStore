@@ -8,11 +8,9 @@ namespace BookStore.Domain
 {
     public class Cart:BaseEntity
     {
-        public Cart(string createdBy):base(createdBy)
-        {
-
-        }
+        public int UserId { get; set; }
         public User User { get; set; }
+        public int BookId { get; set; }
         public Book Book { get; set; }
     }
 }

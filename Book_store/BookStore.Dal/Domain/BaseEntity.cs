@@ -9,9 +9,10 @@ namespace BookStore.Dal.Domain
     {
         public String CreatedBy { get; set; }
         public DateTime CreatedAt { get; set; }
-        protected BaseEntity(string createdBy)
+        public DateTime ModifiedAt { get; set; }
+        public int Id { get; set; }
+        protected BaseEntity()
         {
-            CreatedBy = createdBy;
             CreatedAt = DateTime.UtcNow;
         }
     }

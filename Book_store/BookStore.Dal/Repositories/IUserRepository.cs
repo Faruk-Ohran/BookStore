@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BookStore.Dal.Repositories
 {
-    public interface IUserRepository : IMainRepository
+    public interface IUserRepository : IMainRepository<User>
     {
 
     }
