@@ -4,14 +4,16 @@ using BookStore.Dal.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BookStore.Dal.Migrations
 {
     [DbContext(typeof(BookStoreDbContext))]
-    partial class BookStoreDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201023061949_Order")]
+    partial class Order
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -71,6 +73,8 @@ namespace BookStore.Dal.Migrations
 
                     b.HasKey("BookId", "CategoryId");
 
+                    b.HasIndex("CategoryId");
+
                     b.ToTable("BookCategories");
                 });
 
@@ -118,10 +122,10 @@ namespace BookStore.Dal.Migrations
 
             modelBuilder.Entity("BookStore.Domain.Order", b =>
                 {
-                    b.Property<int>("BookId")
+                    b.Property<int>("UserId")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserId")
+                    b.Property<int>("BookId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("DateTime")
@@ -133,9 +137,9 @@ namespace BookStore.Dal.Migrations
                     b.Property<float>("Total")
                         .HasColumnType("real");
 
-                    b.HasKey("BookId", "UserId", "DateTime");
+                    b.HasKey("UserId", "BookId");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("BookId");
 
                     b.ToTable("Orders");
                 });
@@ -185,18 +189,18 @@ namespace BookStore.Dal.Migrations
 
             modelBuilder.Entity("BookStore.Domain.WishList", b =>
                 {
-                    b.Property<int>("BookId")
+                    b.Property<int>("UserId")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserId")
+                    b.Property<int>("BookId")
                         .HasColumnType("int");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.HasKey("BookId", "UserId");
+                    b.HasKey("UserId", "BookId");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("BookId");
 
                     b.ToTable("WishLists");
                 });
@@ -211,7 +215,7 @@ namespace BookStore.Dal.Migrations
 
                     b.HasOne("BookStore.Domain.Category", "Category")
                         .WithMany("Categories")
-                        .HasForeignKey("BookId")
+                        .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -249,13 +253,13 @@ namespace BookStore.Dal.Migrations
             modelBuilder.Entity("BookStore.Domain.WishList", b =>
                 {
                     b.HasOne("BookStore.Domain.Book", "Book")
-                        .WithMany("WishLists")
+                        .WithMany("wishLists")
                         .HasForeignKey("BookId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("BookStore.Domain.User", "User")
-                        .WithMany("WishLists")
+                        .WithMany("wishLists")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

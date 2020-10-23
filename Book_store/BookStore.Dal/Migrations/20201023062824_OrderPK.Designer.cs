@@ -4,14 +4,16 @@ using BookStore.Dal.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BookStore.Dal.Migrations
 {
     [DbContext(typeof(BookStoreDbContext))]
-    partial class BookStoreDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201023062824_OrderPK")]
+    partial class OrderPK
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -70,6 +72,8 @@ namespace BookStore.Dal.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("BookId", "CategoryId");
+
+                    b.HasIndex("CategoryId");
 
                     b.ToTable("BookCategories");
                 });
@@ -211,7 +215,7 @@ namespace BookStore.Dal.Migrations
 
                     b.HasOne("BookStore.Domain.Category", "Category")
                         .WithMany("Categories")
-                        .HasForeignKey("BookId")
+                        .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

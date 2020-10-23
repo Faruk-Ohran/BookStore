@@ -12,6 +12,11 @@ namespace BookStore.Dal.Context
         public DbSet<User> Users { get; set; }
         public DbSet<Book> Books { get; set; }
         public DbSet<Cart> Carts { get; set; }
+        public DbSet<WishList> WishLists { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<BookCategory> BookCategories { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -24,10 +29,12 @@ namespace BookStore.Dal.Context
         {
             modelBuilder.ApplyConfiguration(new UserConfiguration());
             modelBuilder.ApplyConfiguration(new BookConfiguration());
-            modelBuilder.Entity<Cart>().HasKey(sc => new { sc.UserId, sc.BookId });
-            modelBuilder.Entity<WishList>().HasKey(sc => new { sc.UserId, sc.BookId });
-            modelBuilder.Entity<Order>().HasKey(sc => new { sc.UserId, sc.BookId });
-            modelBuilder.Entity<BookCategory>().HasKey(sc => new { sc.BookId, sc.CategoryId });
+            modelBuilder.ApplyConfiguration(new CartConfiguration());
+            modelBuilder.ApplyConfiguration(new OrderConfiguration());
+            modelBuilder.ApplyConfiguration(new WishListConfiguration());
+            modelBuilder.ApplyConfiguration(new BookCategoryConfiguration());
+            modelBuilder.ApplyConfiguration(new CategoryConfiguration());
+
             base.OnModelCreating(modelBuilder);
         }
     }

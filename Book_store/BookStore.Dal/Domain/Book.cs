@@ -15,7 +15,7 @@ namespace BookStore.Domain
         public byte[] Image { get; set; }
         public int Quantity { get; set; }
         public IList<Cart> Carts { get; set; }
-        public IList<WishList> wishLists { get; set; }
+        public IList<WishList> WishLists { get; set; }
         public IList<Order> Orders { get; set; }
         public IList<BookCategory> Categories { get; set; }
 
