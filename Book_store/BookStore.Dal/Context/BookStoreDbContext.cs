@@ -1,4 +1,5 @@
 ﻿using BookStore.Dal.Configuration;
+using BookStore.Dal.Domain;
 using BookStore.Domain;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -11,9 +12,7 @@ namespace BookStore.Dal.Context
     {
         public DbSet<User> Users { get; set; }
         public DbSet<Book> Books { get; set; }
-        public DbSet<Cart> Carts { get; set; }
-        public DbSet<WishList> WishLists { get; set; }
-        public DbSet<Order> Orders { get; set; }
+        public DbSet<UserBook> UserBooks { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<BookCategory> BookCategories { get; set; }
 
@@ -29,9 +28,7 @@ namespace BookStore.Dal.Context
         {
             modelBuilder.ApplyConfiguration(new UserConfiguration());
             modelBuilder.ApplyConfiguration(new BookConfiguration());
-            modelBuilder.ApplyConfiguration(new CartConfiguration());
-            modelBuilder.ApplyConfiguration(new OrderConfiguration());
-            modelBuilder.ApplyConfiguration(new WishListConfiguration());
+            modelBuilder.ApplyConfiguration(new UserBookConfiguration());
             modelBuilder.ApplyConfiguration(new BookCategoryConfiguration());
             modelBuilder.ApplyConfiguration(new CategoryConfiguration());
 

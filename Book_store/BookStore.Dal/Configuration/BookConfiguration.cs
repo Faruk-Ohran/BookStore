@@ -24,6 +24,10 @@ namespace BookStore.Dal.Configuration
                 .Property(p => p.Price)
                 .IsRequired();
 
+            builder
+                .HasOne(ub => ub.UserBook)
+                .WithMany(b => b.Books)
+                .HasForeignKey(ub => ub.UserBookId);
         }
     }
 }

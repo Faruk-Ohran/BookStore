@@ -14,10 +14,8 @@ namespace BookStore.Domain
         public string Author { get; set; }
         public byte[] Image { get; set; }
         public int Quantity { get; set; }
-        public IList<Cart> Carts { get; set; }
-        public IList<WishList> WishLists { get; set; }
-        public IList<Order> Orders { get; set; }
         public IList<BookCategory> Categories { get; set; }
-
+        public int UserBookId { get; set; }
+        public UserBook UserBook { get; set; }
     }
 }

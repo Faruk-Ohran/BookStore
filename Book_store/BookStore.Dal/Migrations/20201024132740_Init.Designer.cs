@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookStore.Dal.Migrations
 {
     [DbContext(typeof(BookStoreDbContext))]
-    [Migration("20201023061949_Order")]
-    partial class Order
+    [Migration("20201024132740_Init")]
+    partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,42 @@ namespace BookStore.Dal.Migrations
                 .HasAnnotation("ProductVersion", "3.1.9")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("BookStore.Dal.Domain.UserBook", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ModifiedAt")
+                        .HasColumnType("datetime2")
+                        .HasComment("Modified");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("isCart")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("isOrdered")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("isWishList")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserBooks");
+                });
 
             modelBuilder.Entity("BookStore.Domain.Book", b =>
                 {
@@ -58,7 +94,12 @@ namespace BookStore.Dal.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
+                    b.Property<int>("UserBookId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("UserBookId");
 
                     b.ToTable("Books");
                 });
@@ -73,27 +114,7 @@ namespace BookStore.Dal.Migrations
 
                     b.HasKey("BookId", "CategoryId");
 
-                    b.HasIndex("CategoryId");
-
                     b.ToTable("BookCategories");
-                });
-
-            modelBuilder.Entity("BookStore.Domain.Cart", b =>
-                {
-                    b.Property<int>("BookId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.HasKey("BookId", "UserId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Carts");
                 });
 
             modelBuilder.Entity("BookStore.Domain.Category", b =>
@@ -104,6 +125,7 @@ namespace BookStore.Dal.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("CategoryName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CreatedAt")
@@ -113,35 +135,12 @@ namespace BookStore.Dal.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("ModifiedAt")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime2")
+                        .HasComment("Modified");
 
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
-                });
-
-            modelBuilder.Entity("BookStore.Domain.Order", b =>
-                {
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("BookId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("DateTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("PaymentMethod")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<float>("Total")
-                        .HasColumnType("real");
-
-                    b.HasKey("UserId", "BookId");
-
-                    b.HasIndex("BookId");
-
-                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("BookStore.Domain.User", b =>
@@ -187,22 +186,22 @@ namespace BookStore.Dal.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("BookStore.Domain.WishList", b =>
+            modelBuilder.Entity("BookStore.Dal.Domain.UserBook", b =>
                 {
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.HasOne("BookStore.Domain.User", "User")
+                        .WithMany("Books")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
 
-                    b.Property<int>("BookId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.HasKey("UserId", "BookId");
-
-                    b.HasIndex("BookId");
-
-                    b.ToTable("WishLists");
+            modelBuilder.Entity("BookStore.Domain.Book", b =>
+                {
+                    b.HasOne("BookStore.Dal.Domain.UserBook", "UserBook")
+                        .WithMany("Books")
+                        .HasForeignKey("UserBookId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("BookStore.Domain.BookCategory", b =>
@@ -215,52 +214,7 @@ namespace BookStore.Dal.Migrations
 
                     b.HasOne("BookStore.Domain.Category", "Category")
                         .WithMany("Categories")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("BookStore.Domain.Cart", b =>
-                {
-                    b.HasOne("BookStore.Domain.Book", "Book")
-                        .WithMany("Carts")
                         .HasForeignKey("BookId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("BookStore.Domain.User", "User")
-                        .WithMany("Carts")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("BookStore.Domain.Order", b =>
-                {
-                    b.HasOne("BookStore.Domain.Book", "Book")
-                        .WithMany("Orders")
-                        .HasForeignKey("BookId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("BookStore.Domain.User", "User")
-                        .WithMany("Orders")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("BookStore.Domain.WishList", b =>
-                {
-                    b.HasOne("BookStore.Domain.Book", "Book")
-                        .WithMany("wishLists")
-                        .HasForeignKey("BookId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("BookStore.Domain.User", "User")
-                        .WithMany("wishLists")
-                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
