@@ -21,6 +21,23 @@ namespace BookStore.Dal.Configuration
                 .HasOne(u => u.User)
                 .WithMany(ub => ub.Books)
                 .HasForeignKey(u => u.UserId);
+
+            builder
+                .HasData(new List<UserBook>
+                {
+                    new UserBook
+                    { Id=1, UserId=1, isCart=true },
+                    new UserBook
+                    { Id=2, UserId=1, isCart=false },
+                    new UserBook
+                    { Id=3, UserId=1, isCart=true },
+                    new UserBook
+                    { Id=4, UserId=2, isCart=true },
+                    new UserBook
+                    { Id=5, UserId=2, isCart=true },
+                    new UserBook
+                    { Id=6, UserId=2, isCart=false }
+                });
         }
     }
 }

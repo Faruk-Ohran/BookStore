@@ -27,7 +27,51 @@ namespace BookStore.Dal.Configuration
             builder
                 .HasOne(ub => ub.UserBook)
                 .WithMany(b => b.Books)
-                .HasForeignKey(ub => ub.UserBookId);
+                .HasForeignKey(ub => ub.Id);
+
+            builder
+                .HasData(
+
+                new Book
+                {
+                    Id=1,
+                    Author="naziv_autora_1",
+                    Name="naziv_knjige_1",
+                    Price=10,
+                    CreatedBy="faruk",
+                    CreatedAt = new DateTime(2020, 10, 23, 10, 00, 00, DateTimeKind.Utc),
+                    UserBookId = 1
+                },
+                new Book
+                {
+                    Id = 2,
+                    Author = "naziv_autora_2",
+                    Name = "naziv_knjige_2",
+                    Price = 20,
+                    CreatedBy = "faruk",
+                    CreatedAt = new DateTime(2020, 10, 23, 10, 00, 00, DateTimeKind.Utc),
+                    UserBookId = 2
+                },
+                new Book
+                {
+                    Id = 3,
+                    Author = "naziv_autora_3",
+                    Name = "naziv_knjige_3",
+                    Price = 15,
+                    CreatedBy = "faruk",
+                    CreatedAt = new DateTime(2020, 10, 23, 10, 00, 00, DateTimeKind.Utc),
+                    UserBookId = 3
+                },
+                new Book
+                {
+                    Id = 4,
+                    Author = "naziv_autora_4",
+                    Name = "naziv_knjige_4",
+                    Price = 25,
+                    CreatedBy = "faruk",
+                    CreatedAt = new DateTime(2020, 10, 23, 10, 00, 00, DateTimeKind.Utc),
+                    UserBookId = 4
+                });
         }
     }
 }

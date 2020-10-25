@@ -121,6 +121,56 @@ namespace BookStore.Dal.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.InsertData(
+                table: "Categories",
+                columns: new[] { "Id", "CategoryName", "CreatedAt", "CreatedBy", "ModifiedAt" },
+                values: new object[,]
+                {
+                    { 1, "Poezija", new DateTime(2020, 10, 23, 10, 0, 0, 0, DateTimeKind.Utc), "faruk", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 2, "Drama", new DateTime(2020, 10, 23, 10, 0, 0, 0, DateTimeKind.Utc), "faruk", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Users",
+                columns: new[] { "Id", "Adress", "CreatedAt", "CreatedBy", "Email", "FirstName", "IsAdmin", "LastName", "ModifiedAt", "Password" },
+                values: new object[,]
+                {
+                    { 1, null, new DateTime(2020, 10, 22, 10, 7, 0, 0, DateTimeKind.Utc), "faruk", "ohran.faruk@hotmail.com", "Faruk", false, "Ohran", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "123456" },
+                    { 2, null, new DateTime(2020, 10, 22, 10, 7, 0, 0, DateTimeKind.Utc), "jasir", "jasir.buric@hotmail.com", "Jasir", false, "Buric", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "123456" },
+                    { 3, null, new DateTime(2020, 10, 22, 10, 7, 0, 0, DateTimeKind.Utc), "muhamed", "muhamed.halkic@hotmail.com", "Muhamed", false, "Halkic", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "123456" },
+                    { 4, null, new DateTime(2020, 10, 22, 10, 7, 0, 0, DateTimeKind.Utc), "mirzad", "mirzad.varupa@hotmail.com", "Mirzad", false, "Varupa", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "123456" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "UserBooks",
+                columns: new[] { "Id", "CreatedAt", "CreatedBy", "ModifiedAt", "UserId", "isCart", "isOrdered", "isWishList" },
+                values: new object[] { 1, new DateTime(2020, 10, 24, 15, 14, 23, 791, DateTimeKind.Utc).AddTicks(6688), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, true, false, false });
+
+            migrationBuilder.InsertData(
+                table: "Books",
+                columns: new[] { "Id", "Author", "CreatedAt", "CreatedBy", "Description", "Image", "ModifiedAt", "Name", "Price", "Quantity", "UserBookId" },
+                values: new object[] { 1, "naziv_autora_1", new DateTime(2020, 10, 23, 10, 0, 0, 0, DateTimeKind.Utc), "faruk", null, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "naziv_knjige_1", 10f, 0, 1 });
+
+            migrationBuilder.InsertData(
+                table: "Books",
+                columns: new[] { "Id", "Author", "CreatedAt", "CreatedBy", "Description", "Image", "ModifiedAt", "Name", "Price", "Quantity", "UserBookId" },
+                values: new object[] { 2, "naziv_autora_2", new DateTime(2020, 10, 23, 10, 0, 0, 0, DateTimeKind.Utc), "faruk", null, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "naziv_knjige_2", 20f, 0, 1 });
+
+            migrationBuilder.InsertData(
+                table: "BookCategories",
+                columns: new[] { "BookId", "CategoryId" },
+                values: new object[] { 1, 1 });
+
+            migrationBuilder.InsertData(
+                table: "BookCategories",
+                columns: new[] { "BookId", "CategoryId" },
+                values: new object[] { 2, 1 });
+
+            migrationBuilder.InsertData(
+                table: "BookCategories",
+                columns: new[] { "BookId", "CategoryId" },
+                values: new object[] { 2, 2 });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Books_UserBookId",
                 table: "Books",

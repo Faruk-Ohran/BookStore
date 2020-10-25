@@ -4,14 +4,16 @@ using BookStore.Dal.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BookStore.Dal.Migrations
 {
     [DbContext(typeof(BookStoreDbContext))]
-    partial class BookStoreDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201024151424_Init")]
+    partial class Init
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -58,60 +60,10 @@ namespace BookStore.Dal.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2020, 10, 24, 15, 42, 44, 89, DateTimeKind.Utc).AddTicks(727),
+                            CreatedAt = new DateTime(2020, 10, 24, 15, 14, 23, 791, DateTimeKind.Utc).AddTicks(6688),
                             ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserId = 1,
                             isCart = true,
-                            isOrdered = false,
-                            isWishList = false
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CreatedAt = new DateTime(2020, 10, 24, 15, 42, 44, 89, DateTimeKind.Utc).AddTicks(2465),
-                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UserId = 1,
-                            isCart = false,
-                            isOrdered = false,
-                            isWishList = false
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CreatedAt = new DateTime(2020, 10, 24, 15, 42, 44, 89, DateTimeKind.Utc).AddTicks(2503),
-                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UserId = 1,
-                            isCart = true,
-                            isOrdered = false,
-                            isWishList = false
-                        },
-                        new
-                        {
-                            Id = 4,
-                            CreatedAt = new DateTime(2020, 10, 24, 15, 42, 44, 89, DateTimeKind.Utc).AddTicks(2507),
-                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UserId = 2,
-                            isCart = true,
-                            isOrdered = false,
-                            isWishList = false
-                        },
-                        new
-                        {
-                            Id = 5,
-                            CreatedAt = new DateTime(2020, 10, 24, 15, 42, 44, 89, DateTimeKind.Utc).AddTicks(2509),
-                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UserId = 2,
-                            isCart = true,
-                            isOrdered = false,
-                            isWishList = false
-                        },
-                        new
-                        {
-                            Id = 6,
-                            CreatedAt = new DateTime(2020, 10, 24, 15, 42, 44, 89, DateTimeKind.Utc).AddTicks(2516),
-                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UserId = 2,
-                            isCart = false,
                             isOrdered = false,
                             isWishList = false
                         });
@@ -186,31 +138,7 @@ namespace BookStore.Dal.Migrations
                             Name = "naziv_knjige_2",
                             Price = 20f,
                             Quantity = 0,
-                            UserBookId = 2
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Author = "naziv_autora_3",
-                            CreatedAt = new DateTime(2020, 10, 23, 10, 0, 0, 0, DateTimeKind.Utc),
-                            CreatedBy = "faruk",
-                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "naziv_knjige_3",
-                            Price = 15f,
-                            Quantity = 0,
-                            UserBookId = 3
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Author = "naziv_autora_4",
-                            CreatedAt = new DateTime(2020, 10, 23, 10, 0, 0, 0, DateTimeKind.Utc),
-                            CreatedBy = "faruk",
-                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "naziv_knjige_4",
-                            Price = 25f,
-                            Quantity = 0,
-                            UserBookId = 4
+                            UserBookId = 1
                         });
                 });
 

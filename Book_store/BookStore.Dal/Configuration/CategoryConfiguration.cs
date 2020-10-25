@@ -16,6 +16,24 @@ namespace BookStore.Dal.Configuration
             builder
                 .Property(p => p.CategoryName)
                 .IsRequired();
+
+            builder
+                .HasData(
+
+                new Category
+                {
+                    Id=1,
+                    CategoryName="Poezija",
+                    CreatedBy="faruk",
+                    CreatedAt = new DateTime(2020, 10, 23, 10, 00, 00, DateTimeKind.Utc)
+                },
+                new Category
+                {
+                    Id = 2,
+                    CategoryName = "Drama",
+                    CreatedBy = "faruk",
+                    CreatedAt = new DateTime(2020, 10, 23, 10, 00, 00, DateTimeKind.Utc)
+                });
         }
     }
 }

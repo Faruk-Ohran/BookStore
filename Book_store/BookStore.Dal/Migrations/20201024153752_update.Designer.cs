@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookStore.Dal.Migrations
 {
     [DbContext(typeof(BookStoreDbContext))]
-    [Migration("20201024132740_Init")]
-    partial class Init
+    [Migration("20201024153752_update")]
+    partial class update
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -55,6 +55,38 @@ namespace BookStore.Dal.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("UserBooks");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedAt = new DateTime(2020, 10, 24, 15, 37, 51, 85, DateTimeKind.Utc).AddTicks(3540),
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserId = 1,
+                            isCart = true,
+                            isOrdered = false,
+                            isWishList = false
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedAt = new DateTime(2020, 10, 24, 15, 37, 51, 85, DateTimeKind.Utc).AddTicks(5293),
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserId = 1,
+                            isCart = false,
+                            isOrdered = false,
+                            isWishList = false
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedAt = new DateTime(2020, 10, 24, 15, 37, 51, 85, DateTimeKind.Utc).AddTicks(5331),
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserId = 1,
+                            isCart = true,
+                            isOrdered = false,
+                            isWishList = false
+                        });
                 });
 
             modelBuilder.Entity("BookStore.Domain.Book", b =>
@@ -102,6 +134,32 @@ namespace BookStore.Dal.Migrations
                     b.HasIndex("UserBookId");
 
                     b.ToTable("Books");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Author = "naziv_autora_1",
+                            CreatedAt = new DateTime(2020, 10, 23, 10, 0, 0, 0, DateTimeKind.Utc),
+                            CreatedBy = "faruk",
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "naziv_knjige_1",
+                            Price = 10f,
+                            Quantity = 0,
+                            UserBookId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Author = "naziv_autora_2",
+                            CreatedAt = new DateTime(2020, 10, 23, 10, 0, 0, 0, DateTimeKind.Utc),
+                            CreatedBy = "faruk",
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "naziv_knjige_2",
+                            Price = 20f,
+                            Quantity = 0,
+                            UserBookId = 1
+                        });
                 });
 
             modelBuilder.Entity("BookStore.Domain.BookCategory", b =>
@@ -115,6 +173,23 @@ namespace BookStore.Dal.Migrations
                     b.HasKey("BookId", "CategoryId");
 
                     b.ToTable("BookCategories");
+
+                    b.HasData(
+                        new
+                        {
+                            BookId = 1,
+                            CategoryId = 1
+                        },
+                        new
+                        {
+                            BookId = 2,
+                            CategoryId = 1
+                        },
+                        new
+                        {
+                            BookId = 2,
+                            CategoryId = 2
+                        });
                 });
 
             modelBuilder.Entity("BookStore.Domain.Category", b =>
@@ -141,6 +216,24 @@ namespace BookStore.Dal.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CategoryName = "Poezija",
+                            CreatedAt = new DateTime(2020, 10, 23, 10, 0, 0, 0, DateTimeKind.Utc),
+                            CreatedBy = "faruk",
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CategoryName = "Drama",
+                            CreatedAt = new DateTime(2020, 10, 23, 10, 0, 0, 0, DateTimeKind.Utc),
+                            CreatedBy = "faruk",
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        });
                 });
 
             modelBuilder.Entity("BookStore.Domain.User", b =>
@@ -184,6 +277,56 @@ namespace BookStore.Dal.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedAt = new DateTime(2020, 10, 22, 10, 7, 0, 0, DateTimeKind.Utc),
+                            CreatedBy = "faruk",
+                            Email = "ohran.faruk@hotmail.com",
+                            FirstName = "Faruk",
+                            IsAdmin = false,
+                            LastName = "Ohran",
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Password = "123456"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedAt = new DateTime(2020, 10, 22, 10, 7, 0, 0, DateTimeKind.Utc),
+                            CreatedBy = "jasir",
+                            Email = "jasir.buric@hotmail.com",
+                            FirstName = "Jasir",
+                            IsAdmin = false,
+                            LastName = "Buric",
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Password = "123456"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedAt = new DateTime(2020, 10, 22, 10, 7, 0, 0, DateTimeKind.Utc),
+                            CreatedBy = "muhamed",
+                            Email = "muhamed.halkic@hotmail.com",
+                            FirstName = "Muhamed",
+                            IsAdmin = false,
+                            LastName = "Halkic",
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Password = "123456"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedAt = new DateTime(2020, 10, 22, 10, 7, 0, 0, DateTimeKind.Utc),
+                            CreatedBy = "mirzad",
+                            Email = "mirzad.varupa@hotmail.com",
+                            FirstName = "Mirzad",
+                            IsAdmin = false,
+                            LastName = "Varupa",
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Password = "123456"
+                        });
                 });
 
             modelBuilder.Entity("BookStore.Dal.Domain.UserBook", b =>

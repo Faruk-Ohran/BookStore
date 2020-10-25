@@ -23,6 +23,26 @@ namespace BookStore.Dal.Configuration
                 .HasOne<Book>(b => b.Book)
                 .WithMany(b => b.Categories)
                 .HasForeignKey(b => b.BookId);
+
+            builder
+                .HasData(new List<BookCategory>
+                {
+                    new BookCategory
+                    {
+                        BookId=1,
+                        CategoryId=1
+                    },
+                    new BookCategory
+                    {
+                        BookId=2,
+                        CategoryId=1
+                    },
+                    new BookCategory
+                    {
+                        BookId=2,
+                        CategoryId=2
+                    }
+                });
         }
     }
 }
