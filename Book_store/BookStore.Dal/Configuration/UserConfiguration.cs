@@ -28,6 +28,11 @@ namespace BookStore.Dal.Configuration
             builder
                 .HasMany(ub => ub.Books)
                 .WithOne(u => u.User)
+                .HasForeignKey(u => u.UserBookId);
+
+            builder
+                .HasMany(o => o.Orders)
+                .WithOne(u => u.User)
                 .HasForeignKey(u => u.UserId);
 
             builder

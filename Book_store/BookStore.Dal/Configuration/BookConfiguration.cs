@@ -25,12 +25,18 @@ namespace BookStore.Dal.Configuration
                 .IsRequired();
 
             builder
-                .HasOne(ub => ub.UserBook)
-                .WithMany(b => b.Books)
-                .HasForeignKey(ub => ub.Id);
+                .HasMany(ub => ub.Books)
+                .WithOne(b => b.Book)
+                .HasForeignKey(b => b.BookUserId);
+
+            builder
+                .HasMany(o => o.Orders)
+                .WithOne(b => b.Book)
+                .HasForeignKey(b => b.BookId);
 
             builder
                 .HasData(
+                new List<Book>{
 
                 new Book
                 {
@@ -40,7 +46,6 @@ namespace BookStore.Dal.Configuration
                     Price=10,
                     CreatedBy="faruk",
                     CreatedAt = new DateTime(2020, 10, 23, 10, 00, 00, DateTimeKind.Utc),
-                    UserBookId = 1
                 },
                 new Book
                 {
@@ -50,7 +55,6 @@ namespace BookStore.Dal.Configuration
                     Price = 20,
                     CreatedBy = "faruk",
                     CreatedAt = new DateTime(2020, 10, 23, 10, 00, 00, DateTimeKind.Utc),
-                    UserBookId = 2
                 },
                 new Book
                 {
@@ -60,7 +64,6 @@ namespace BookStore.Dal.Configuration
                     Price = 15,
                     CreatedBy = "faruk",
                     CreatedAt = new DateTime(2020, 10, 23, 10, 00, 00, DateTimeKind.Utc),
-                    UserBookId = 3
                 },
                 new Book
                 {
@@ -70,7 +73,7 @@ namespace BookStore.Dal.Configuration
                     Price = 25,
                     CreatedBy = "faruk",
                     CreatedAt = new DateTime(2020, 10, 23, 10, 00, 00, DateTimeKind.Utc),
-                    UserBookId = 4
+                } 
                 });
         }
     }

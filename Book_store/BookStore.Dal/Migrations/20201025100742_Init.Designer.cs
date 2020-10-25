@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookStore.Dal.Migrations
 {
     [DbContext(typeof(BookStoreDbContext))]
-    [Migration("20201024151424_Init")]
+    [Migration("20201025100742_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,6 +28,9 @@ namespace BookStore.Dal.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("BookUserId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
@@ -38,7 +41,7 @@ namespace BookStore.Dal.Migrations
                         .HasColumnType("datetime2")
                         .HasComment("Modified");
 
-                    b.Property<int>("UserId")
+                    b.Property<int>("UserBookId")
                         .HasColumnType("int");
 
                     b.Property<bool>("isCart")
@@ -52,7 +55,9 @@ namespace BookStore.Dal.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("BookUserId");
+
+                    b.HasIndex("UserBookId");
 
                     b.ToTable("UserBooks");
 
@@ -60,10 +65,66 @@ namespace BookStore.Dal.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2020, 10, 24, 15, 14, 23, 791, DateTimeKind.Utc).AddTicks(6688),
+                            BookUserId = 1,
+                            CreatedAt = new DateTime(2020, 10, 25, 10, 7, 41, 678, DateTimeKind.Utc).AddTicks(5512),
                             ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UserId = 1,
+                            UserBookId = 1,
                             isCart = true,
+                            isOrdered = false,
+                            isWishList = false
+                        },
+                        new
+                        {
+                            Id = 2,
+                            BookUserId = 3,
+                            CreatedAt = new DateTime(2020, 10, 25, 10, 7, 41, 678, DateTimeKind.Utc).AddTicks(8325),
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserBookId = 1,
+                            isCart = false,
+                            isOrdered = false,
+                            isWishList = false
+                        },
+                        new
+                        {
+                            Id = 3,
+                            BookUserId = 4,
+                            CreatedAt = new DateTime(2020, 10, 25, 10, 7, 41, 678, DateTimeKind.Utc).AddTicks(8391),
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserBookId = 1,
+                            isCart = true,
+                            isOrdered = false,
+                            isWishList = false
+                        },
+                        new
+                        {
+                            Id = 4,
+                            BookUserId = 4,
+                            CreatedAt = new DateTime(2020, 10, 25, 10, 7, 41, 678, DateTimeKind.Utc).AddTicks(8396),
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserBookId = 2,
+                            isCart = true,
+                            isOrdered = false,
+                            isWishList = false
+                        },
+                        new
+                        {
+                            Id = 5,
+                            BookUserId = 3,
+                            CreatedAt = new DateTime(2020, 10, 25, 10, 7, 41, 678, DateTimeKind.Utc).AddTicks(8399),
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserBookId = 2,
+                            isCart = true,
+                            isOrdered = false,
+                            isWishList = false
+                        },
+                        new
+                        {
+                            Id = 6,
+                            BookUserId = 2,
+                            CreatedAt = new DateTime(2020, 10, 25, 10, 7, 41, 678, DateTimeKind.Utc).AddTicks(8409),
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserBookId = 2,
+                            isCart = false,
                             isOrdered = false,
                             isWishList = false
                         });
@@ -106,12 +167,7 @@ namespace BookStore.Dal.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserBookId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("UserBookId");
 
                     b.ToTable("Books");
 
@@ -125,8 +181,7 @@ namespace BookStore.Dal.Migrations
                             ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "naziv_knjige_1",
                             Price = 10f,
-                            Quantity = 0,
-                            UserBookId = 1
+                            Quantity = 0
                         },
                         new
                         {
@@ -137,8 +192,29 @@ namespace BookStore.Dal.Migrations
                             ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "naziv_knjige_2",
                             Price = 20f,
-                            Quantity = 0,
-                            UserBookId = 1
+                            Quantity = 0
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Author = "naziv_autora_3",
+                            CreatedAt = new DateTime(2020, 10, 23, 10, 0, 0, 0, DateTimeKind.Utc),
+                            CreatedBy = "faruk",
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "naziv_knjige_3",
+                            Price = 15f,
+                            Quantity = 0
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Author = "naziv_autora_4",
+                            CreatedAt = new DateTime(2020, 10, 23, 10, 0, 0, 0, DateTimeKind.Utc),
+                            CreatedBy = "faruk",
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "naziv_knjige_4",
+                            Price = 25f,
+                            Quantity = 0
                         });
                 });
 
@@ -311,16 +387,13 @@ namespace BookStore.Dal.Migrations
 
             modelBuilder.Entity("BookStore.Dal.Domain.UserBook", b =>
                 {
-                    b.HasOne("BookStore.Domain.User", "User")
+                    b.HasOne("BookStore.Domain.Book", "Book")
                         .WithMany("Books")
-                        .HasForeignKey("UserId")
+                        .HasForeignKey("BookUserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
 
-            modelBuilder.Entity("BookStore.Domain.Book", b =>
-                {
-                    b.HasOne("BookStore.Dal.Domain.UserBook", "UserBook")
+                    b.HasOne("BookStore.Domain.User", "User")
                         .WithMany("Books")
                         .HasForeignKey("UserBookId")
                         .OnDelete(DeleteBehavior.Cascade)

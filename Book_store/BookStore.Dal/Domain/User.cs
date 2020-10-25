@@ -15,5 +15,6 @@ namespace BookStore.Domain
         public string Password { get; set; }
         public bool IsAdmin { get; set; }
         public ICollection<UserBook> Books { get; set; }
+        public ICollection<Order> Orders { get; set; }
     }
 }
