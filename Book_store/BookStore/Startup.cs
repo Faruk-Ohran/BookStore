@@ -33,7 +33,8 @@ namespace BookStore
             var connectionString = Configuration.GetConnectionString("BookStore");
             services.AddDbContext<BookStoreDbContext>(builder => builder.UseSqlServer(connectionString));
 
-            services.AddScoped<IUserRepository, InMemoryUserRepository>();
+            services.AddScoped<IUserRepository, SqlServerUserRepository>();
+            services.AddScoped<IBookRepository, SqlServerBookRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
